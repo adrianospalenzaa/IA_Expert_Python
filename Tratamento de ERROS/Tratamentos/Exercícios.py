@@ -10,9 +10,19 @@ Mostre uma mensagem personalizada na ocorrência de cada um desses erros
 """
 
 lista = []
+try:
+    for i in range(0, 2):
+        valor = float(input(f'Digite o {i + 1}° valor:\n'))
+        lista.append(valor)
+    resul = (lista[0] / lista[1])
 
-for i in range(0, 2):
-    valor = float(input(f'Digite o {i + 1}° valor:\n'))
-    lista.append(valor)
-resul = (lista[0] / lista[1])
-print(f'Divisão dos valores é {resul}')
+except ValueError:
+    print('Valor inválido')
+except ZeroDivisionError:
+    print('Não é possível dividir por zero')
+except IndexError:
+    print('Posição inexistente')
+except KeyboardInterrupt:
+    print('Usuário interrompeu a execução')
+else:
+    print(f'Divisão dos valores é {resul}')
