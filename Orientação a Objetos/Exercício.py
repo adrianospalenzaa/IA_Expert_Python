@@ -43,3 +43,8 @@ aluno1 = aluno('adriano', 1.5, 10.0)
 media = aluno1.calcula_media()
 aluno1.mostra_dados()
 aluno1.resultado()
+
+aluno2 = aluno('joao', 10.0, 10.0)
+media = aluno2.calcula_media()
+aluno2.mostra_dados()
+aluno2.resultado()

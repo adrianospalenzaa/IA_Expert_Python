@@ -43,5 +43,7 @@ print(l2)
 
 print(len(l2))  # exibe a quantidade de elementos da lista
 
+ramdom.sample(range(100), 5)  # gera 5 numeros aleatorios entre 0 e 99
+
 
 del l2  # remove a lista

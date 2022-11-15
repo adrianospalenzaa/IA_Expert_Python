@@ -8,3 +8,4 @@ IndexError: índice está fora da coleção
 KeyError: chave não encontrada
 ValueError: valor não encontrado
 '''
+
