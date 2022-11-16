@@ -94,8 +94,6 @@ def forca():  # função do jogo da forca
         print('\033[035mParabens você venceu!!\033[m Tente um nível mais dificil!')  # mensagem de vitória
 
 
-os.system('cls' if os.name == 'nt' else 'clear')  # limpa o terminal antes de começar
-
 while True:  # loop para jogar novamente
     forca()  # chama a função do jogo
     n = ' '
@@ -103,3 +101,4 @@ while True:  # loop para jogar novamente
         n = input('\nJogar novamente[S]/[N]? ').upper()[0]  # pergunta se o usuário quer jogar novamente
     if n == 'N':
         break  # se não, o jogo acaba
+os.system('cls' if os.name == 'nt' else 'clear')  # limpa o terminal antes de começar
