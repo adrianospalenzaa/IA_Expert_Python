@@ -11,30 +11,28 @@ matriz_alfabeto = np.array([['A', 'B', 'C', 'D', 'E'],  # matriz do alfabeto par
 
 def forca():  # função do jogo da forca
     from random import randint
-    p = [['amarelo', 'amiga', 'amor', 'ave', 'aviao', 'avo', 'balao', 'bebe', 'bolo', 'branco', 'cama', 'caneca',
-          'celular', 'clube',
-          'copo', 'doce', 'elefante', 'escola', 'estojo', 'faca', 'foto', 'garfo', 'geleia', 'girafa', 'janela',
-          'limonada', 'mae',
-          'meia', 'noite', 'oculos', 'onibus', 'ovo', 'pai', 'pao', 'parque', 'passarinho', 'peixe', 'pijama', 'rato',
-          'umbigo'],
-         ['afobado', 'amendoim', 'banheiro', 'caatinga', 'cachorro', 'campeonato', 'capricornio',
-          'catapora', 'corrupcao', 'crepusculo', 'empenhado', 'esparadrapo', 'forca', 'galaxia', 'historia', 'magenta',
-          'manjericao', 'menta',
-          'moeda', 'oracao', 'pacoca', 'palavra', 'pedreiro', 'pneumonia', 'pulmao', 'rotatoria', 'serenata',
-          'transeunte', 'trilogia', 'xicara'],
-         ['acender', 'afilhado', 'ardiloso', 'aspero', 'assombracao', 'asterisco', 'basquete', 'caminho', 'champanhe',
-          'chiclete', 'chuveiro',
-          'coelho', 'contexto', 'convivencia', 'coracao', 'desalmado', 'eloquente', 'esfirra', 'esquerdo', 'excecao',
-          'fugaz', 'gororoba',
-          'heterossexual', 'horrorizado', 'impacto', 'independencia', 'modernidade', 'oftalmologista',
-          'otorrinolaringologista', 'paralelepipedo',
-          'pororoca', 'prognosticio', 'quarentena', 'quimera', 'refeicao', 'reportagem', 'sino', 'taciturno', 'tenue',
-          'visceral']]  # lista de palavras por dificuldade (facil, medio, dificil)
-    print('-=' * 20)  # printa uma linha
+    p = [['azul', 'amarelo', 'vermelho', 'branco', 'preto', 'verde', 'ciano', 'rosa', 'magenta', 'lilas', 'roxo',
+          'vinho', 'bege', 'marrom',
+          'cinza', 'dourado', 'prata'],
+         ['gato', 'cachorro', 'galinha', 'papagaio', 'tartaruga', 'boi', 'cobra', 'passaro', 'abelha', 'urubu',
+          'aranha', 'barata',
+          'barata', 'bode', 'borboleta', 'elefante', 'galo', 'porco', 'ovelha', 'mosquito', 'sapo', 'touro', 'urso',
+          'siri', 'peixe', 'pato',
+          'tigre', 'girafa', 'panda', 'coelho', 'zebra', 'jacare', 'arara', 'baleia', 'mula', 'cavalo', 'camelo',
+          'foca', 'lobo', 'humano'],
+         ['professor', 'eletricista', 'faxineira', 'maquiadora', 'programador', 'bioquimico', 'artista', 'medico',
+          'psicologo', 'atendente',
+          'arquiteto', 'cozinheiro', 'musico', 'engenheiro', 'advogado', 'juiz', 'fazendeiro', 'enfermeiro', 'escritor',
+          'cientista',
+          'ator', 'diretor', 'manicure', 'cabelereira', 'padeiro', 'confeiteiro', 'pintor', 'dentista', 'bombeiro',
+          'policial',
+          'empreendedor', 'soldado', 'presidente',
+          'blogueira']]  # lista de palavras por dificuldade (facil, medio, dificil)
+    print('-=' * 20)  # mostra uma linha
     print('JOGO DA FORCA')
     print('-=' * 20)
     while True:  # loop para escolher dificuldade
-        print('[1] Fácil \n[2] Médio\n[3] Difícil')
+        print('[1] Fácil- COR \n[2] Médio ANIMAL \n[3] Difícil PROFISSÃO')
         modo = int(input('Escolha o modo de jogo: '))
         if modo == 1 or modo == 2 or modo == 3:  # Verifica se o modo escolhido é válido
             break  # sai do loop
@@ -66,14 +64,6 @@ def forca():  # função do jogo da forca
             print()
         print('-=' * 6)
 
-while d not in 'nNsS':
-    d = input('Você deseja dar um chute [S]/[N]?').upper()[0]
-    if chute == pal:
-
-if d == 'N':
-    break
-
-
         linha = int(input('Digite a posição da linha: '))
         coluna = int(input('Digite a posição da coluna: '))
         print(f'Letra: {matriz_alfabeto[linha, coluna]}')
@@ -90,6 +80,14 @@ if d == 'N':
                 x += 1
         usadas += ' ' + t  # adiciona a letra usada na string de letras usadas
         if x == len(pal):  # se a letra não estiver na palavra, perde uma tentativa
+            vidas -= 1  # perde uma tentativa
+
+        ch = str(input('\nAdivinhou a palavra [S]/[N]?'))
+        if ch == 'sS':
+            chute = str(input('\nDigite a palavra:'))
+        if chute == len(pal):  # se a letra não estiver na palavra, perde uma tentativa
+            print('Parabens voce venceu!')
+        else:
             vidas -= 1  # perde uma tentativa
 
         if vidas == 0 or q_caract == pal:  # se o jogador perder todas as tentativas ou acertar a palavra, o jogo acaba
@@ -109,4 +107,5 @@ while True:  # loop para jogar novamente
         n = input('\nJogar novamente[S]/[N]? ').upper()[0]  # pergunta se o usuário quer jogar novamente
     if n == 'N':
         break  # se não, o jogo acaba
-os.system('cls' if os.name == 'nt' else 'clear')  # limpa o terminal antes de começar
+
+    os.system('cls' if os.name == 'nt' else 'clear')  # limpa o terminal antes de começar
